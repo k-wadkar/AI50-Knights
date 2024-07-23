@@ -64,14 +64,11 @@ knowledge3 = And(
     # B says "C is a knave"
     Implication(BKnight, CKnave),
     Implication(BKnave, CKnight),
-    # A says either "I am a knight." or "I am a knave.", but you don't know which.
-    # Implication(AKnight, Or(AKnight, AKnave)),
-    #Implication(AKnave, Or(Not(AKnight), Not(AKnave))),
     # B says "A said 'I am a knave'."
-    Implication(And(BKnight, AKnight), BKnave),
-    Implication(And(BKnight, AKnave), BKnight),
-    Implication(And(BKnave, AKnight), BKnight),
-    Implication(And(BKnave, AKnave), BKnave)
+    Implication(And(BKnight, AKnight), AKnave),
+    Implication(And(BKnight, AKnave), AKnight),
+    Implication(And(BKnave, AKnight), AKnight),
+    Implication(And(BKnave, AKnave), AKnave)
 )
 
 
